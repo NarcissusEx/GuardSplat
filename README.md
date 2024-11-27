@@ -43,7 +43,7 @@ We provide a demo code "*eval_watermark.ipynb*" for evaluation. It is recommende
 
 2) Install the *CLIP* (see https://github.com/openai/CLIP).
 
-3) Download the "*eval_examples*" folder from [Google Driver](https://www.bilibili.com) / [Baidu Cloud](https://www.bilibili.com) as:
+3) Download the "*eval_examples*" folder from [Google Driver](https://drive.google.com/drive/folders/1U3OR5z5EOC7S5bicS2aYi199GX2Lv5e3?usp=drive_link) / [Baidu Cloud](https://pan.baidu.com/s/1tu53Fg4gT8cyDBbzBTO0dA?pwd=kdty) as:
 
 4) Copy the file "*eval_watermark.ipynb*" and the "*eval_examples*" folder into the "*gaussian-splatting*" folder as:
 ```
