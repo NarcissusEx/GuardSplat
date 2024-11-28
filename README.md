@@ -1,15 +1,17 @@
 # GuardSplat
-The source code for our paper "**[GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting]**", [Zixuan Chen](https://narcissusex.github.io), [Guangcong Wang](https://wanggcong.github.io/), [Jiahao Zhu](), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478), arXiv.preprint, 2024.
 
-<p align="center">
-    <a href="">Paper</a> |
-    <a href="https://narcissusex.github.io/GuardSplat/">Project Page</a> |
-    <a href="https://bilibili.com">Video</a>
-</p>
+The source code for our paper "*GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting*", [Zixuan Chen](https://narcissusex.github.io), [Guangcong Wang](https://wanggcong.github.io/), [Jiahao Zhu](), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478), arXiv.preprint, 2024.
+
+**TL;DR:** We present GuardSplat, an innovative and efficient watermarking framework to effectively protect the copyright of 3DGS assets. GuardSplat decouples the optimization of image reconstruction and message extraction by CLIP's text-image aligning capability, achieving much better performance than state-of-the-art watermarking approaches in capacity, invisibility, robustness, security, and training efficiency.
+
+---
+
+[[Paper]]() [[Project Page]](https://narcissusex.github.io/GuardSplat/) [[Demo Video]](https://youtu.be/48Nxaot94Do) [[Materials & Pretrained Models]](https://drive.google.com/drive/folders/1U3OR5z5EOC7S5bicS2aYi199GX2Lv5e3?usp=drive_link)
+
 <div align=center>
 <img width="1148" alt="framework" src="assets/guardsplat.png">
 </div>
-
+<b>Application scenarios of GuardSplat.</b> To protect the copyright of 3D Gaussian Splatting (3DGS) assets, <b>(a)</b> the owners (<font style="color:#058CFA;">Alice</font>) can use our <b>GuardSplat</b> to embed the secret message (<font style="color: blue;">blue key</font>) into these models. <b>(b)</b> If malicious users (<font style="color:#00B050">Bob</font>) render views for unauthorized uses, <b>(c)</b> <font style="color:#058CFA;">Alice</font> can use the private message decoder to extract messages (<font style="color:plum">purple key</font>) for copyright identification.
 
 <!-- ## Abstract
 
