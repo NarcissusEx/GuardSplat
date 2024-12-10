@@ -1,6 +1,6 @@
-# GuardSplat
+# GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting
 
-The source code for our paper "*GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting*", [Zixuan Chen](https://narcissusex.github.io), [Guangcong Wang](https://wanggcong.github.io/), [Jiahao Zhu](), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478), arXiv.preprint, 2024.
+[Zixuan Chen](https://narcissusex.github.io), [Guangcong Wang](https://wanggcong.github.io/), [Jiahao Zhu](), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478). 
 
 **TL;DR:** GuardSplat is an efficient watermarking framework to protect the copyright of 3DGS assets. It presents superior performance to state-of-the-art watermarking approaches in capacity, invisibility, robustness, security, and training efficiency.
 
