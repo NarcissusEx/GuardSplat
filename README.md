@@ -72,11 +72,11 @@ gaussian-splatting/
 
 ```tex
 @article{Chen_2024_GuardSplat,
-author    = {Chen, Zixuan and Wang, Guangcong and Zhu, Jiahao and Lai, Jian-Huang and Xie, Xiaohua},
-title     = {GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting},
-year      = {2024},
-journal   = {arXiv preprint},
-}
+    author  = {Chen, Zixuan and Wang, Guangcong and Zhu, Jiahao and Lai, Jian-Huang and Xie, Xiaohua},
+    title   = {GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting},
+    year    = {2024},
+    journal = {arXiv preprint},
+    }
 ```
 
 ## Acknowledgement 
