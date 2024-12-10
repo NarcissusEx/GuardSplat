@@ -76,7 +76,7 @@ gaussian-splatting/
     title   = {GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting},
     year    = {2024},
     journal = {arXiv preprint},
-    }
+}
 ```
 
 ## Acknowledgement 
