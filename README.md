@@ -9,8 +9,7 @@
 <!-- [[Paper]](https://arxiv.org/abs/2411.19895) [[Project Page]](https://narcissusex.github.io/GuardSplat/) [[Demo Video]](https://youtu.be/QgejiJE2-5g) [[Materials & Pretrained Models]](https://drive.google.com/drive/folders/1U3OR5z5EOC7S5bicS2aYi199GX2Lv5e3?usp=drive_link) -->
 
 [![ArXiv](https://img.shields.io/badge/cs.CV-2411.19895-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2411.19895)
-<!-- [![Project](https://img.shields.io/badge/Website-1?logo=pytorch&label=Project)](https://narcissusex.github.io/GuardSplat/) -->
-[![Project](https://img.shields.io/badge/Website-1?logo=Google%20chrome&logoColor=FBBC05&label=Project)](https://narcissusex.github.io/GuardSplat/)
+[![Project](https://img.shields.io/badge/Website-1?logo=Google%20chrome&logoColor=F55A34&label=Project)](https://narcissusex.github.io/GuardSplat/)
 [![Video](https://img.shields.io/badge/Video-1?logo=youtube&logoColor=CD201F&label=Youtube)](https://youtu.be/QgejiJE2-5g)
 [![Google Drive](https://img.shields.io/badge/Material-1?logo=googledrive&label=Google%20Drive)](https://drive.google.com/drive/folders/1U3OR5z5EOC7S5bicS2aYi199GX2Lv5e3?usp=drive_link)
 [![Baidu Cloud](https://img.shields.io/badge/Materials-ryP168bDMFcScdiYWgYktlu%3Fusp%3Ddrive_link?logo=Baidu&label=Baidu%20Cloud)](https://pan.baidu.com/s/1tu53Fg4gT8cyDBbzBTO0dA?pwd=kdty)
