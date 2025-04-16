@@ -73,32 +73,6 @@ class CLIPWatermarker(nn.Module):
         x = x / x.norm(dim=1, keepdim=True)
         return self.msg_decoder(x)
 
-    # def forward(self, x):
-    #     x = self.encode_text(x).float()
-    #     x = self.pre_process(x)
-    #     x = self.msg_decoder(x)
-    #     return self.post_process(x)
-
-    # def decode(self, x):
-    #     x = self.resample(x)
-    #     x = self.normalize(x)
-    #     x = self.clip_visual(x)
-    #     x = self.pre_process(x)
-    #     x = self.msg_decoder(x)
-    #     return self.post_process(x)
-    
-    # def pre_process(self, x):
-    #     return x / x.norm(dim=1, keepdim=True)
-        
-    # def post_process(self, x):
-    #     return torch.sigmoid(x)
-
-    # def normalize(self, x):
-    #     return (x - self.mean) / self.std
-
-    # def inv_normalize(self, x):
-    #     return x * self.std + self.mean
-    
     def resample(self, x):
         return x if x.shape[-2:] == CLIP_IMAGE_SIZE else F.interpolate(x, size=CLIP_IMAGE_SIZE, mode='bilinear', align_corners=True, antialias=True)
 
@@ -125,19 +99,6 @@ class MsgDataset(Dataset):
         if not hasattr(self, 'data'):
             dec_messages = sample_K_from_N(self.max_size, max_value)
             self.data = [self.dec_message_to_tokens(x) for x in dec_messages]
-            # bin_messages, tokens = list(zip(*[self.raw_message_to_tokens(x) for x in dec_messages]))
-            # bin_messages, tokens = torch.vstack(bin_messages), torch.vstack(tokens).long()
-            # self.data = list(zip(messages, clip_tokens))
-
-            # messages, tokens = [], []
-            # for dec_message in dec_messages:
-            #     bin_message, tokens = self.raw_message_to_tokens(dec_message)
-            #     messages.append(message[None])
-            #     tokens.append(clip_token[None])
-
-            # messages = torch.cat(messages)
-            # clip_tokens = torch.cat(clip_tokens).long()
-            # self.data = list(zip(messages, clip_tokens))        
 
     # Decimal message -> Binary message + CLIP tokens
     def dec_message_to_tokens(self, dec_message):
@@ -177,20 +138,6 @@ def bit_accuracy(output, target):
     output = torch.where(output > 0.0, 1.0, 0.0)
     err = torch.logical_xor(output, target).sum().item() / target.numel()
     return (1. - err) * 100
-
-# def psnr(output, target):
-#     return PSNR(output, target).mean().item()
-
-# def ssim(output, target):
-#     return SSIM(output, target).mean().item()
-
-# def lpips(output, target, bsize=8):
-#     vs = (LPIPSMODEL(output[idx * bsize : (idx + 1) * bsize], target[idx * bsize : (idx + 1) * bsize]).item() for idx in range((len(output) + bsize - 1) // bsize))
-#     return reduce(lambda x1, x2 : x1 + x2, vs) / len(output)
-    # v = 0
-    # for idx in range((len(output) + bsize - 1) // bsize):
-    #     v += LPIPSMODEL(output[idx * bsize : (idx + 1) * bsize], target[idx * bsize : (idx + 1) * bsize]).item()
-    # return v / len(output)
 
 def load_decoder_and_message(msg_len, sdir):
     sdict = torch.load(os.path.join(sdir, f'CLIP-MsgDecoder-{msg_len}.pkl'), map_location='cpu', weights_only=True)
