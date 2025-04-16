@@ -3,7 +3,7 @@
 # @Email:  chenzx3@mail2.sysu.edu.cn
 # @Date: 2025-04-15
 # @Description: Generate the cameras of Blender and LLFF for watermarking.
-# Some codes are borrowed from CopyRNeRF (https://github.com/luo-ziyuan/CopyRNeRF-code/)
+# The code is implemented based on CopyRNeRF (https://github.com/luo-ziyuan/CopyRNeRF-code/)
 # This Software is free for non-commercial, research and evaluation use.
 ##########################################################################
 

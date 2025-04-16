@@ -39,7 +39,7 @@ class BrightnessAttack(nn.Module):
         factor = np.random.rand() * (self.brightness_factor_max - self.brightness_factor_min) + self.brightness_factor_min
         return F.adjust_brightness(image, factor)
 
-# this code is borrowed from Diff-JPEG (https://github.com/necla-ml/Diff-JPEG).
+# this function is implemented based on Diff-JPEG (https://github.com/necla-ml/Diff-JPEG).
 def jpeg_coding_cv2(image_rgb, jpeg_quality):
     B, _, _, _ = image_rgb.shape
     image_rgb_jpeg = []
@@ -47,7 +47,7 @@ def jpeg_coding_cv2(image_rgb, jpeg_quality):
         encode_parameters = (int(cv2.IMWRITE_JPEG_QUALITY), int(jpeg_quality[index].item()))
         _, encoding = cv2.imencode('.jpeg', image_rgb[index].flip(0).permute(1, 2, 0).numpy(), encode_parameters)
         image_rgb_jpeg.append(torch.from_numpy(cv2.imdecode(encoding, 1)).permute(2, 0, 1).flip(0))
-    image_rgb_jpeg: Tensor = torch.stack(image_rgb_jpeg, dim=0)
+    image_rgb_jpeg = torch.stack(image_rgb_jpeg, dim=0)
     return image_rgb_jpeg
 
 class JPEGCompressAttack(nn.Module):
@@ -109,6 +109,7 @@ class GaussianNoiseAttack(nn.Module):
     def forward(self, image):
         return image + (self.sigma ** 2) * torch.randn_like(image)
 
+# these two functions are implemented based on WatermarkAttacker (https://github.com/XuandongZhao/WatermarkAttacker).
 class VAEAttack(nn.Module):
     def __init__(self):
         super().__init__()

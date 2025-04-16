@@ -1,6 +1,6 @@
 # create python env
-conda create -n GuardSplat python=3.12 -y
-conda activate GuardSplat
+# conda create -n GuardSplat python=3.12 -y
+# conda activate GuardSplat
 
 # install pytorch
 conda install pytorch==2.5.1 torchvision==0.20.1 pytorch-cuda=12.1 -c pytorch -c nvidia -y

@@ -49,31 +49,50 @@ Finally, we feed $F _\mathcal{T}$ into message decoder $\mathcal{D _M}$ to extra
 A differentiable distortion layer is used to simulate various visual distortions during optimization.
 $\mathcal{D _M}$ and $\boldsymbol{h}^o _i$ are optimized by the corresponding losses, respectively.
 
-## An Evaluation Example of Our GuardSplat
+## 1) Get start
 
-We provide a demo code "*eval_watermark.ipynb*" for evaluation. It is recommended to check the evaluation results recorded in the Jupyter Notebook and run the code by the following steps:
+* Python 3.12
+* CUDA 12.1 or *higher*
+* NVIDIA RTX 3090
+* PyTorch 2.5.1 or *higher*
 
-
-1) Install the *3D gaussian splatting* (see https://github.com/graphdeco-inria/gaussian-splatting).
-
-2) Install the *CLIP* (see https://github.com/openai/CLIP).
-
-3) Download the "*eval_examples*" folder from [Google Driver](https://drive.google.com/drive/folders/1U3OR5z5EOC7S5bicS2aYi199GX2Lv5e3?usp=drive_link) / [Baidu Cloud](https://pan.baidu.com/s/1tu53Fg4gT8cyDBbzBTO0dA?pwd=kdty) as:
-
-4) Copy the file "*eval_watermark.ipynb*" and the "*eval_examples*" folder into the "*gaussian-splatting*" folder as:
-```
-gaussian-splatting/
-    ├── eval_examples/
-    │   ├── CLIP_visual+msg_decoder-32.pt (CLIP Visual Encoder + Our Message Decoder)
-    │   ├── original-lego.ply (original 3DGS asset)
-    │   ├── watermarked-lego.ply (watermarked file)
-    │   ├── message-lego.txt (32-bit secret message)
-    │   └── cameras-lego.json (3DGS camera pose file)
-    ├── eval_watermark.ipynb
-    └── ...
+**Create a python env using conda**
+```bash
+conda create -n GuardSplat python=3.12 -y
+conda activate GuardSplat
 ```
 
-4) Run the code in "*eval_watermark.ipynb*".
+**Install the required libraries**
+```bash
+bash setup.sh
+```
+
+Please see *setup.sh* in details.
+
+## 2) Train and evaluate the message decoder
+```bash
+python make_decoder.py --mode train --msg_len <message_length> --save --num_epochs <training_epochs>
+python make_decoder.py --mode test --msg_len <message_length>
+```
+
+## 3) Train a 3DGS model
+```bash
+python gaussian-splatting/train.py -s <nerf_dir>/<nerf_item> -m <result_dir> -w 
+```
+
+## 4) Watermark a 3DGS model (blender or llff mode)
+```bash
+# no distortions
+python run_watermark.py -s <nerf_dir>/<nerf_item> -m <result_dir> -w --mode train --msg_len <message_length> --sdir <watermark_dir> --dtype blender
+
+# single distortion
+python run_watermark.py -s <nerf_dir>/<nerf_item> -m <result_dir> -w --mode train --msg_len <message_length> --sdir <watermark_dir> --dtype blender atypes <distortion>
+
+# combined distortions
+python run_watermark.py -s <nerf_dir>/<nerf_item> -m <result_dir> -w --mode train --msg_len <message_length> --sdir <watermark_dir> --dtype blender atypes <distortion1> <distortion2> ... <distortionN>
+```
+
+More details can be shown in *run.sh*.
 
 ## Citation
 
@@ -88,4 +107,7 @@ gaussian-splatting/
 
 ## Acknowledgement 
 
-We build our project based on **[gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting)** and **[CLIP](https://github.com/openai/CLIP)**. We sincerely thank them for their wonderful work and code release.
+We build our project based on **[gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting)** and **[CLIP](https://github.com/openai/CLIP)**.
+The differentiable JPEG compression and VAE attack are implemented based on **[Diff-JPEG](https://github.com/necla-ml/Diff-JPEG)** and **[WatermarkAttacker](https://github.com/XuandongZhao/WatermarkAttacker)**, respectively.
+We also follow the settings used in **[CopyRNeRF](https://github.com/luo-ziyuan/CopyRNeRF-code/)** and **[WateRF](https://github.com/kuai-lab/cvpr2024_WateRF)**.
+We sincerely thank them for their wonderful work and code release.
