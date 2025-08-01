@@ -1,8 +1,0 @@
-pillow
-tqdm
-plyfile
-opencv-python
-ftfy 
-regex
-compressai
-kornia
