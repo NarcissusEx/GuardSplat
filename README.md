@@ -85,11 +85,13 @@ More details can be shown in *run.sh*.
 ## Citation
 
 ```tex
-@InProceedings{chen2025guardsplat,
-    author={Chen, Zixuan and Wang, Guangcong and Zhu, Jiahao and Lai, Jian-Huang and Xie, Xiaohua},
-    title={GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting},
-    year={2025},
-    booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision and Pattern Recognition (CVPR)},
+@InProceedings{Chen_2025_CVPR,
+    author    = {Chen, Zixuan and Wang, Guangcong and Zhu, Jiahao and Lai, Jianhuang and Xie, Xiaohua},
+    title     = {GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {16325-16335}
 }
 ```
 
