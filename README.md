@@ -1,6 +1,6 @@
 # GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting
 
-[Zixuan Chen](https://narcissusex.github.io), [Guangcong Wang](https://wanggcong.github.io/), [Jiahao Zhu](), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478). 
+[Zixuan Chen](https://narcissusex.github.io), [Guangcong Wang](https://wanggcong.github.io/), [Jiahao Zhu](https://scholar.google.com/citations?user=Mz9vwyEAAAAJ), [Jianhuang Lai](https://cse.sysu.edu.cn/teacher/LaiJianhuang), [Xiaohua Xie](https://cse.sysu.edu.cn/teacher/XieXiaohua). 
 
 **IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)**, 2025
 
